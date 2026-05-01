@@ -22,7 +22,9 @@ import com.abs.banquemisrapp.ui.theme.Maroon
 fun LogoAndBtn(modifier: Modifier = Modifier) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(start = 12.dp, end = 12.dp, top = 64.dp)
     ) {
         Image(
             painter = painterResource(R.drawable.bm_icon),
