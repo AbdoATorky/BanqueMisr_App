@@ -1,6 +1,7 @@
 package com.abs.banquemisrapp
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -208,9 +209,12 @@ fun ServiceList(services: List<Services>, modifier: Modifier = Modifier) {
 @Composable
 fun ServiceListItem(service: Services, modifier: Modifier = Modifier) {
     Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
-            .padding(4.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+            .padding(4.dp)
+            .clickable{
+                //Service Link
+            },
     ) {
         Image(
             painter = painterResource(service.image),
