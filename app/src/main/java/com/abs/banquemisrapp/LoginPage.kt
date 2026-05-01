@@ -213,7 +213,7 @@ fun ServiceListItem(service: Services, modifier: Modifier = Modifier) {
         modifier = modifier
             .padding(4.dp)
             .clickable{
-                //Service Link
+                //Service Link here
             },
     ) {
         Image(
