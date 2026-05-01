@@ -1,5 +1,6 @@
 package com.abs.banquemisrapp
 
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -16,6 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.os.LocaleListCompat
 import com.abs.banquemisrapp.ui.theme.Maroon
 
 @Composable
@@ -39,7 +41,11 @@ fun LogoAndBtn(modifier: Modifier = Modifier) {
             fontFamily = FontFamily.SansSerif,
             modifier = Modifier
                 .padding(top = 6.dp)
-                .clickable {}
+                .clickable {
+                    val currentLocale = AppCompatDelegate.getApplicationLocales().toLanguageTags()
+                    val newLocale = if (currentLocale.contains("ar")) "en" else "ar"
+                    AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(newLocale))
+                }
         )
 
     }
